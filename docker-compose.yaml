@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  onos:
+    container_name: onos
+    image: onosproject/onos:latest
+    ports:
+      - "8181:8181"
+      - "8101:8101"
+    environment:
+      - ONOS_APPS=gui,drivers.bmv2,lldpprovider,hostprovider,proxyarp,route-service,fwd,openflow
+    links:
+      - mininet
+    depends_on:
+      - mininet
+    networks: 
+      - some-net
+      
+  mininet:
+    container_name: mininet
+    privileged: true
+    environment:
+     - DISPLAY
+    image: iwaseyusuke/mininet:latest
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /lib/modules:/lib/modules
+    privileged: true
+    tty: true
+    networks: 
+      - some-net
+    
+networks:
+  some-net:
+    driver: bridge
