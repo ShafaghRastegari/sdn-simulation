@@ -2,9 +2,8 @@
 A simple project with mininet and onos
 ## Usage
 Suppose you already have installed docker, docker-compose and other common requirements, follow these steps.
-1. Build and run using compose file to run mininet and onos
+1. Run docker-compose file to run mininet and onos
 ```sh
-docker-compose docker-compose.yaml build
 docker-compose docker-compose.yaml up
 ```
 2. Go to mininet terminal
