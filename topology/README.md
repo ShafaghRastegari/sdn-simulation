@@ -1,7 +1,5 @@
 # One(Simple tree topology)
 
-Here we create and run custom topology
-
 In this project we create a simple tree topology. End-hosts connect to top-of-rack switches, called edge switches and form the leaves of the tree; one or more core switches form the root of the tree; and one or more aggregation switches form the intermediate nodes of the tree.
 
 In our project there is only one core switch connected to 𝑛 aggregation switches; each aggregation switch is connected to 𝑛 edge switches; each edges switches is connected to 𝑛 hosts.
